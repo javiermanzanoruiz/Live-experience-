@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Experience — Bespoke Sporting Experiences, South of Spain</title>
+<meta name="description" content="A private design studio for fully personalised sporting, gastronomic and lifestyle experiences across the south of Spain.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b09'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-style='italic' font-size='28' fill='%238f7a4d' text-anchor='middle'%3ELE%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0b0b09">
+<link rel="canonical" href="https://your-domain.example/">
+
+<!-- Basic structured data — REVIEW: fill in the real legal/business details once available -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Live Experience",
+  "description": "A private design studio for fully personalised sporting, gastronomic and lifestyle experiences across the south of Spain.",
+  "url": "https://your-domain.example/",
+  "areaServed": "Andalusia, Spain",
+  "email": "hello@liveexperience.example"
+}
+</script>
+
+<!-- Open Graph / social preview — replace og:image with a real hosted image (1200x630) once available -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Live Experience">
+<meta property="og:title" content="Live Experience — Bespoke Sporting &amp; Lifestyle Experiences, South of Spain">
+<meta property="og:description" content="A private design studio for fully personalised sporting, gastronomic and lifestyle experiences across the south of Spain.">
+<meta property="og:url" content="https://your-domain.example/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Live Experience — South of Spain">
+<meta name="twitter:description" content="A private design studio for fully personalised sporting, gastronomic and lifestyle experiences across the south of Spain.">
+
+
+<!--
+  ============================================================
+  BRAND PLACEHOLDER NOTICE — for the developer, not the visitor
+  ============================================================
+  Working name: "LIVE EXPERIENCE". No logotype, no final palette,
+  no final typography has been defined yet.
+
+  1) NAME   → search "LIVE EXPERIENCE" (header, hero coords aside
+     is fine as-is, footer, <title>) and replace.
+  2) LOGO   → .logo is pure CSS type. Swap for an <img>/<svg aria-hidden="true"> and
+     it inherits the same spacing.
+  3) COLOUR → every colour is a CSS variable under "BRAND TOKENS"
+     in :root. Six values restyle the whole site.
+  4) TYPE   → "Fraunces" (display) + "Inter" (body/UI), loaded via
+     Google Fonts <link>. Swap link + --font-* variables.
+  5) IMAGERY → every photo is an atmospheric CSS placeholder inside
+     ".photo-frame" with a caption. Replace the inner background
+     with real photography; frame + caption keep working.
+  6) LANGUAGE → all copy lives in the `translations` object at the
+     bottom of the file, keyed by the same string used in each
+     element's data-i18n attribute. Add a third language by adding
+     a new key (e.g. "de") to every entry and a button to
+     .lang-switch — no HTML restructuring required.
+  7) FORM SUBMISSION → ends in a client-side "Request received"
+     state only. Wire `handleSubmit()` (bottom of <script>) to your
+     mailer / CRM / JSONBin endpoint of choice.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   BRAND TOKENS — change these to rebrand the site
+   ========================================================= */
+:root{
+  --c-ink:        #0b0b09;   /* primary dark — near-black, cool undertone */
+  --c-ink-soft:   #423f37;   /* secondary dark — body copy on light */
+  --c-paper:      #faf8f3;   /* primary light background */
+  --c-stone:      #eee7d7;   /* secondary light background, alternation */
+  --c-accent:     #8f7a4d;   /* provisional brand accent — muted brass gold */
+  --c-line:       #d9d0ba;   /* hairline borders / dividers */
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ease: cubic-bezier(.22,1,.36,1);
+  --container: 1240px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+}
+
+body{
+  font-family:var(--font-body);
+  color:var(--c-ink-soft);
+  background:var(--c-paper);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+input,select,textarea{font-family:inherit;font-size:inherit;color:inherit;}
+
+.wrap{max-width:var(--container);margin:0 auto;padding:0 40px;}
+@media (max-width:640px){ .wrap{padding:0 22px;} }
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:11.5px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--c-accent);
+  font-weight:600;
+  display:inline-block;
+}
+
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  color:var(--c-ink);
+  font-weight:400;
+  letter-spacing:-0.01em;
+}
+
+.serif-italic{font-style:italic;font-weight:400;}
+
+/* top hairline of gold — quiet framing device */
+.top-rule{
+  position:fixed; top:0; left:0; right:0; height:2px; z-index:1000;
+  background:linear-gradient(90deg, transparent, var(--c-accent) 45%, var(--c-accent) 55%, transparent);
+  opacity:.55;
+}
+
+/* grain overlay for premium texture */
+.grain{
+  pointer-events:none;
+  position:fixed;inset:0;
+  z-index:999;
+  opacity:.03;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* =========================================================
+   REVEAL ON SCROLL
+   ========================================================= */
+.reveal{opacity:0; transform:translateY(24px); transition:opacity .9s var(--ease), transform .9s var(--ease);}
+.reveal.in{opacity:1; transform:translateY(0);}
+.reveal-delay-1{transition-delay:.08s;}
+.reveal-delay-2{transition-delay:.16s;}
+.reveal-delay-3{transition-delay:.24s;}
+.reveal-delay-4{transition-delay:.32s;}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+header{
+  position:fixed; top:2px; left:0; right:0; z-index:500;
+  padding:26px 0;
+  transition:background .5s var(--ease), padding .5s var(--ease), border-color .5s var(--ease);
+  border-bottom:1px solid transparent;
+}
+header.solid{
+  background:rgba(250,248,243,.92);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  padding:16px 0;
+  border-bottom:1px solid var(--c-line);
+}
+header .wrap{display:flex; align-items:center; justify-content:space-between;}
+.header-right{display:flex; align-items:center; gap:26px;}
+
+.logo{
+  font-family:var(--font-display);
+  font-size:19px;
+  letter-spacing:.14em;
+  color:var(--c-paper);
+  transition:color .5s var(--ease);
+  font-weight:500;
+}
+header.solid .logo{color:var(--c-ink);}
+.logo em{font-style:italic; color:var(--c-accent);}
+
+nav.primary{display:flex; align-items:center; gap:38px;}
+nav.primary a.navlink{
+  font-size:13px; letter-spacing:.04em;
+  color:var(--c-paper); opacity:.85;
+  transition:color .5s var(--ease), opacity .3s;
+  position:relative;
+}
+header.solid nav.primary a.navlink{color:var(--c-ink-soft);}
+nav.primary a.navlink:hover{opacity:1;}
+nav.primary a.navlink::after{
+  content:'';position:absolute;left:0;right:0;bottom:-6px;height:1px;
+  background:currentColor; transform:scaleX(0); transform-origin:right;
+  transition:transform .4s var(--ease);
+}
+nav.primary a.navlink:hover::after{transform:scaleX(1); transform-origin:left;}
+
+.lang-switch{
+  display:flex; align-items:center; gap:0; font-size:11.5px; letter-spacing:.06em; font-weight:600;
+  border:1px solid rgba(250,248,243,.45); border-radius:20px; padding:3px; flex:none;
+  transition:border-color .5s var(--ease);
+}
+header.solid .lang-switch{border-color:var(--c-line);}
+.lang-switch button{
+  color:rgba(250,248,243,.75); padding:5px 12px; border-radius:16px; transition:all .3s var(--ease);
+}
+header.solid .lang-switch button{color:var(--c-ink-soft);}
+.lang-switch button.active{background:var(--c-paper); color:var(--c-ink); opacity:1;}
+header.solid .lang-switch button.active{background:var(--c-ink); color:var(--c-paper);}
+.lang-switch .sep{display:none;}
+
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:13px 26px;
+  font-size:12.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:600;
+  border:1px solid currentColor;
+  transition:all .45s var(--ease);
+  white-space:nowrap;
+}
+.btn-ghost-dark{color:var(--c-paper);}
+.btn-ghost-dark:hover{background:var(--c-paper); color:var(--c-ink);}
+header.solid .btn-ghost-dark{color:var(--c-ink);}
+header.solid .btn-ghost-dark:hover{background:var(--c-ink); color:var(--c-paper);}
+.btn-solid{background:var(--c-ink); color:var(--c-paper); border-color:var(--c-ink);}
+.btn-solid:hover{background:var(--c-accent); border-color:var(--c-accent); color:var(--c-ink);}
+.btn-outline{border-color:var(--c-ink); color:var(--c-ink);}
+.btn-outline:hover{background:var(--c-ink); color:var(--c-paper);}
+
+.nav-toggle{display:none;}
+@media (max-width:960px){
+  nav.primary{display:none;}
+  .nav-toggle{display:block; color:var(--c-paper); transition:color .5s;}
+  header.solid .nav-toggle{color:var(--c-ink);}
+}
+
+/* mobile menu */
+#mobileMenu{
+  position:fixed; inset:0; z-index:800;
+  background:var(--c-ink);
+  display:flex; flex-direction:column; justify-content:center;
+  padding:40px;
+  transform:translateY(-100%); transition:transform .55s var(--ease);
+}
+#mobileMenu.open{transform:translateY(0);}
+#mobileMenu a{
+  font-family:var(--font-display); font-size:32px; color:var(--c-paper);
+  padding:14px 0; border-bottom:1px solid rgba(250,248,243,.12);
+}
+#mobileMenu .close-btn{position:absolute; top:26px; right:28px; color:var(--c-paper);}
+#mobileMenu .lang-switch{margin-top:30px; font-size:13px;}
+#mobileMenu .lang-switch button{color:var(--c-paper);}
+
+/* =========================================================
+   HERO — quiet, editorial, near-black with a single warm glow
+   ========================================================= */
+.hero{
+  position:relative; min-height:100vh; min-height:100svh;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding-bottom:96px;
+  background:
+    radial-gradient(75% 55% at 78% -8%, rgba(143,122,77,.32) 0%, transparent 62%),
+    radial-gradient(60% 45% at 8% 100%, rgba(143,122,77,.10) 0%, transparent 60%),
+    linear-gradient(180deg, #0b0b09 0%, #16130f 55%, #1e1913 100%);
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute; inset:-20%;
+  background:radial-gradient(closest-side, rgba(233,206,150,.09), transparent 70%);
+  animation:driftLight 26s ease-in-out infinite;
+}
+@keyframes driftLight{
+  0%,100%{transform:translate(-6%,-3%) scale(1);}
+  50%{transform:translate(4%,4%) scale(1.1);}
+}
+.hero-hairline{
+  position:absolute; left:0; right:0; bottom:0; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(250,248,243,.22), transparent);
+}
+.hero-content{position:relative; z-index:2;}
+.hero .eyebrow{color:#d9c396; margin-bottom:26px;}
+.hero h1{
+  color:var(--c-paper);
+  font-size:clamp(40px,7.4vw,90px);
+  line-height:1.04;
+  letter-spacing:-0.015em;
+  max-width:16ch;
+}
+.hero p.lede{
+  color:rgba(250,248,243,.72);
+  font-size:clamp(15px,1.6vw,18px);
+  max-width:46ch;
+  margin-top:28px;
+  font-weight:300;
+}
+.hero-actions{display:flex; align-items:center; gap:28px; margin-top:46px; flex-wrap:wrap;}
+.hero-scroll-hint{
+  color:rgba(250,248,243,.55); font-size:12.5px; letter-spacing:.05em;
+  display:flex; align-items:center; gap:10px;
+}
+.hero-scroll-hint svg{animation:bob 2.6s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}
+
+.hero-coords{
+  position:absolute; right:40px; bottom:40px; z-index:2;
+  text-align:right; color:rgba(250,248,243,.45);
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  display:flex; flex-direction:column; gap:4px;
+}
+@media (max-width:720px){ .hero-coords{display:none;} }
+
+/* =========================================================
+   SECTION SCAFFOLDING
+   ========================================================= */
+section{padding:136px 0;}
+@media (max-width:720px){ section{padding:86px 0;} }
+.section-stone{background:var(--c-stone);}
+.section-ink{background:var(--c-ink); color:rgba(250,248,243,.7);}
+.section-ink h2, .section-ink h3{color:var(--c-paper);}
+
+.section-head{max-width:640px; margin-bottom:64px;}
+.section-head h2{font-size:clamp(30px,4vw,48px); margin-top:16px; line-height:1.14;}
+.section-head p{margin-top:20px; font-size:16px; max-width:52ch;}
+.section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+
+/* =========================================================
+   PHILOSOPHY
+   ========================================================= */
+.philosophy-lead{
+  font-family:var(--font-display); font-style:italic; font-weight:400;
+  font-size:clamp(24px,3vw,34px);
+  color:var(--c-ink); line-height:1.35; max-width:20ch;
+}
+
+.equation{
+  display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+  gap:22px; margin:90px 0 20px;
+}
+.eq-item{display:flex; flex-direction:column; align-items:center; gap:14px; width:128px; text-align:center;}
+.eq-icon{
+  width:74px; height:74px; border-radius:50%;
+  border:1px solid var(--c-line);
+  display:flex; align-items:center; justify-content:center;
+  background:var(--c-paper);
+  transition:transform .5s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease);
+}
+.eq-item.in .eq-icon{border-color:var(--c-accent); box-shadow:0 0 0 1px rgba(143,122,77,.15);}
+.eq-icon svg{width:28px; height:28px; stroke:var(--c-ink); fill:none; stroke-width:1.1;}
+.eq-label{font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--c-ink-soft);}
+.eq-sign{font-family:var(--font-display); font-size:26px; color:var(--c-line); font-style:italic;}
+.eq-result{display:flex; flex-direction:column; align-items:center; gap:14px; width:180px; text-align:center;}
+.eq-result .eq-icon{width:90px; height:90px; background:var(--c-ink); border-color:var(--c-ink);}
+.eq-result .eq-icon svg{stroke:var(--c-paper);}
+.eq-result .eq-label{font-family:var(--font-display); font-style:italic; font-size:17px; color:var(--c-ink); text-transform:none; letter-spacing:0;}
+
+.values-flow{
+  margin-top:100px; display:flex; flex-wrap:wrap; gap:52px 64px;
+  padding-top:56px; border-top:1px solid var(--c-line);
+}
+.value-item{flex:1 1 220px; min-width:200px;}
+.value-item h4{font-size:22px; font-style:italic; font-weight:400; margin-bottom:8px;}
+.value-item p{font-size:13.5px; color:var(--c-ink-soft); max-width:26ch;}
+
+/* =========================================================
+   HOW IT WORKS
+   ========================================================= */
+.steps-row{display:flex; gap:0; border-top:1px solid var(--c-line);}
+.step-col{flex:1; padding:44px 36px 0 0; position:relative;}
+.step-col + .step-col{border-left:1px solid var(--c-line); padding-left:36px;}
+.step-num{font-family:var(--font-display); font-style:italic; font-size:15px; color:var(--c-accent);}
+.step-col h4{font-size:21px; margin:14px 0 10px;}
+.step-col p{font-size:14px; max-width:30ch;}
+@media (max-width:820px){
+  .steps-row{flex-direction:column;}
+  .step-col + .step-col{border-left:none; border-top:1px solid var(--c-line); padding-left:0; padding-top:36px;}
+}
+
+/* =========================================================
+   PHOTO FRAME — cohesive duotone placeholder photography
+   ========================================================= */
+.photo-frame{
+  position:relative; aspect-ratio:4/5; overflow:hidden;
+  background:linear-gradient(165deg,#cbb488 0%,#8a6f42 42%,#4a3c22 72%,#14110a 100%);
+  box-shadow:inset 0 0 0 1px rgba(250,248,243,.06);
+}
+.photo-frame::after{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(120% 90% at 15% 0%, rgba(255,255,255,.16), transparent 55%),
+             radial-gradient(100% 80% at 100% 100%, rgba(0,0,0,.45), transparent 60%);
+}
+.photo-frame .pf-caption{
+  position:absolute; left:18px; bottom:16px; z-index:2;
+  color:#faf8f3; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  display:flex; align-items:center; gap:8px;
+}
+.photo-frame .pf-caption::before{content:'';width:14px;height:1px;background:#d9c396;}
+.photo-frame.wide{aspect-ratio:16/10;}
+.pf-tint-1{filter:hue-rotate(0deg) saturate(1);}
+.pf-tint-2{filter:hue-rotate(-16deg) saturate(.9);}
+.pf-tint-3{filter:hue-rotate(8deg) saturate(1.05);}
+.pf-tint-4{filter:hue-rotate(-8deg) saturate(.8) brightness(.97);}
+
+/* line-art illustrations drawn over the duotone placeholders */
+.pf-art{position:absolute; inset:0; width:100%; height:100%; z-index:1;}
+.pf-art *{stroke:rgba(250,248,243,.58); fill:none;}
+.pf-art .fill{fill:rgba(250,248,243,.4); stroke:none;}
+
+/* =========================================================
+   EXPERIENCES
+   ========================================================= */
+.exp-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--c-line);}
+@media (max-width:820px){ .exp-grid{grid-template-columns:1fr;} }
+.exp-card{background:var(--c-paper); position:relative; overflow:hidden;}
+.exp-card .photo-frame{transition:transform 1.1s var(--ease);}
+.exp-card:hover .photo-frame{transform:scale(1.045);}
+.exp-body{padding:30px 34px 38px;}
+.exp-body .tag{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--c-accent); font-weight:600;}
+.exp-body h3{font-size:25px; margin:12px 0 10px;}
+.exp-body p{font-size:14px; max-width:38ch;}
+.exp-more{
+  margin-top:18px; font-size:12.5px; letter-spacing:.07em; text-transform:uppercase;
+  display:inline-flex; align-items:center; gap:8px; color:var(--c-ink);
+}
+.exp-more svg{width:14px; height:14px; transition:transform .35s var(--ease);}
+.exp-card:hover .exp-more svg{transform:translateX(4px);}
+
+/* =========================================================
+   SPORTS — four disciplines, presented with real weight
+   ========================================================= */
+.sports-grid{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
+  background:var(--c-line); border:1px solid var(--c-line);
+}
+@media (max-width:760px){ .sports-grid{grid-template-columns:1fr;} }
+.sport-feature{
+  background:var(--c-paper); padding:52px 48px;
+  display:flex; flex-direction:column; gap:16px;
+  transition:background .4s var(--ease);
+}
+.sport-feature:hover{background:var(--c-stone);}
+.sport-feature .sf-num{font-family:var(--font-display); font-style:italic; color:var(--c-accent); font-size:14px;}
+.sport-feature .sf-icon{width:42px; height:42px;}
+.sport-feature .sf-icon svg{width:100%; height:100%; stroke:var(--c-ink); fill:none; stroke-width:1.1;}
+.sport-feature h3{font-size:25px; margin-top:2px;}
+.sport-feature p{font-size:14px; max-width:42ch;}
+@media (max-width:640px){ .sport-feature{padding:38px 28px;} }
+.sports-footnote{margin-top:44px; text-align:center; font-style:italic; font-family:var(--font-display); font-size:18px; color:var(--c-ink);}
+
+/* =========================================================
+   WHY US
+   ========================================================= */
+.why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(250,248,243,.1);}
+@media (max-width:900px){ .why-grid{grid-template-columns:1fr;} }
+.why-tile{background:var(--c-ink); padding:44px 38px;}
+.why-tile .num{font-family:var(--font-display); font-style:italic; color:var(--c-accent); font-size:15px;}
+.why-tile h4{font-size:19px; color:var(--c-paper); margin:16px 0 10px; font-weight:400;}
+.why-tile p{font-size:13.5px; color:rgba(250,248,243,.62);}
+
+/* =========================================================
+   PROCESS TIMELINE
+   ========================================================= */
+.timeline{position:relative; padding-left:48px;}
+.timeline::before{content:''; position:absolute; left:9px; top:8px; bottom:8px; width:1px; background:var(--c-line);}
+.tl-item{position:relative; padding-bottom:52px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-dot{
+  position:absolute; left:-48px; top:2px; width:19px; height:19px; border-radius:50%;
+  background:var(--c-paper); border:1px solid var(--c-ink);
+  display:flex; align-items:center; justify-content:center;
+}
+.tl-dot::after{content:''; width:6px; height:6px; border-radius:50%; background:var(--c-accent);}
+.tl-item h4{font-size:20px; margin-bottom:8px;}
+.tl-item .tl-meta{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--c-accent); margin-bottom:10px; display:block;}
+.tl-item p{font-size:14.5px; max-width:52ch;}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+.form-wrap{background:var(--c-paper); border:1px solid var(--c-line);}
+.form-progress{display:flex; border-bottom:1px solid var(--c-line);}
+.fp-step{
+  flex:1; padding:20px 18px; text-align:center; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:#b7ae98; border-right:1px solid var(--c-line); position:relative;
+}
+.fp-step:last-child{border-right:none;}
+.fp-step .fp-n{display:block; font-family:var(--font-display); font-style:italic; font-size:16px; margin-bottom:4px; color:#c9c0a8;}
+.fp-step.active{color:var(--c-ink);}
+.fp-step.active .fp-n{color:var(--c-accent);}
+.fp-step.done{color:var(--c-ink-soft);}
+.fp-step.done .fp-n{color:var(--c-ink);}
+@media (max-width:760px){ .fp-step span:not(.fp-n){display:none;} }
+
+.form-body{padding:56px 56px 48px;}
+@media (max-width:640px){ .form-body{padding:36px 24px 32px;} }
+.form-step{display:none;}
+.form-step.active{display:block; animation:fadeUp .5s var(--ease);}
+@keyframes fadeUp{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+.form-step h3{font-size:26px; margin-bottom:8px;}
+.form-step .fs-sub{font-size:14px; margin-bottom:36px; color:var(--c-ink-soft);}
+
+.field-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px 28px;}
+@media (max-width:640px){ .field-grid{grid-template-columns:1fr;} }
+.field{display:flex; flex-direction:column; gap:9px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:var(--c-ink-soft);}
+.field input, .field select, .field textarea{
+  border:none; border-bottom:1px solid var(--c-line);
+  background:transparent; padding:11px 2px; font-size:15.5px; color:var(--c-ink);
+  transition:border-color .3s;
+}
+.field textarea{resize:vertical; min-height:96px; line-height:1.5;}
+.field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--c-accent);}
+.field select{appearance:none; -webkit-appearance:none; background:transparent;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23423f37' fill='none' stroke-width='1.3'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 2px center;
+}
+
+.radio-row{display:flex; flex-wrap:wrap; gap:10px;}
+
+/* date range dropdown ("flight style") */
+.date-field{position:relative;}
+.date-trigger{
+  text-align:left; width:100%; border:none; border-bottom:1px solid var(--c-line);
+  background:transparent; padding:11px 26px 11px 2px; font-size:15.5px; color:var(--c-ink);
+  position:relative; transition:border-color .3s;
+}
+.date-trigger::after{
+  content:''; position:absolute; right:2px; top:50%; width:9px; height:9px;
+  border-right:1px solid var(--c-ink-soft); border-bottom:1px solid var(--c-ink-soft);
+  transform:translateY(-65%) rotate(45deg); transition:transform .3s var(--ease);
+}
+.date-field.open .date-trigger::after{transform:translateY(-35%) rotate(-135deg);}
+.date-field.open .date-trigger{border-color:var(--c-accent);}
+.date-panel{
+  display:none; position:absolute; top:calc(100% + 10px); left:0; z-index:20;
+  background:var(--c-paper); border:1px solid var(--c-line); box-shadow:0 18px 40px rgba(11,11,9,.12);
+  padding:24px; width:min(420px, calc(100vw - 40px)); max-width:calc(100vw - 40px);
+}
+.date-field.open .date-panel{display:block;}
+.date-panel-row{display:flex; gap:20px;}
+.date-panel-row .field input{border-bottom:1px solid var(--c-line); padding:9px 2px; font-size:14.5px; width:100%;}
+.date-panel-row .field label{font-size:11px;}
+
+.sport-level-rows{display:flex; flex-direction:column; gap:14px; margin-top:6px;}
+.sport-level-row{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:12px 0; border-bottom:1px solid var(--c-line);}
+.sport-level-row .slr-name{font-size:14.5px; color:var(--c-ink);}
+.sport-level-row select{border:none; border-bottom:1px solid var(--c-line); background:transparent; padding:6px 22px 6px 2px; font-size:14px; color:var(--c-ink); min-width:180px;
+  appearance:none; -webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23423f37' fill='none' stroke-width='1.3'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 2px center;}
+.chip{
+  border:1px solid var(--c-line); padding:9px 16px; font-size:12px; letter-spacing:.03em; cursor:pointer;
+  transition:all .3s var(--ease); user-select:none;
+}
+.chip:hover{border-color:var(--c-accent);}
+.chip input{display:none;}
+.chip.checked{background:var(--c-ink); color:var(--c-paper); border-color:var(--c-ink);}
+
+.form-nav{display:flex; justify-content:space-between; align-items:center; margin-top:48px; gap:20px;}
+.form-nav .spacer{flex:1;}
+.btn-plain{font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--c-ink-soft); display:flex; align-items:center; gap:8px;}
+.btn-plain:hover{color:var(--c-ink);}
+.btn-plain[disabled]{opacity:0; pointer-events:none;}
+
+.thankyou{display:none; padding:90px 56px; text-align:center;}
+.thankyou.active{display:block; animation:fadeUp .6s var(--ease);}
+.thankyou h3{font-size:34px; margin:24px 0 14px;}
+.thankyou p{max-width:44ch; margin:0 auto; font-size:15px;}
+.thankyou .ty-icon{width:64px; height:64px; margin:0 auto; border-radius:50%; border:1px solid var(--c-accent); display:flex; align-items:center; justify-content:center;}
+.thankyou .ty-icon svg{width:24px; height:24px; stroke:var(--c-accent); fill:none; stroke-width:1.4;}
+
+.consent-row{display:flex; align-items:flex-start; gap:12px; cursor:pointer; font-size:13px; color:var(--c-ink-soft); line-height:1.5;}
+.consent-row input{width:16px; height:16px; margin-top:2px; accent-color:var(--c-ink); flex:none;}
+.consent-row a{color:var(--c-ink); text-decoration:underline; text-underline-offset:2px;}
+
+.direct-contact{
+  text-align:center; margin-top:28px; font-size:13.5px; color:var(--c-ink-soft);
+}
+.direct-contact a{color:var(--c-ink); border-bottom:1px solid var(--c-line); padding-bottom:1px; transition:border-color .3s;}
+.direct-contact a:hover{border-color:var(--c-accent);}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.faq-item{border-bottom:1px solid var(--c-line);}
+.faq-q{width:100%; display:flex; align-items:center; justify-content:space-between; padding:28px 4px; text-align:left; font-family:var(--font-display); font-size:19px; color:var(--c-ink);}
+.faq-q .plus{width:20px; height:20px; position:relative; flex:none; margin-left:24px;}
+.faq-q .plus::before, .faq-q .plus::after{content:''; position:absolute; background:var(--c-ink); transition:transform .4s var(--ease);}
+.faq-q .plus::before{left:0; top:9px; width:20px; height:1px;}
+.faq-q .plus::after{left:9px; top:0; width:1px; height:20px;}
+.faq-item.open .faq-q .plus::after{transform:rotate(90deg); opacity:0;}
+.faq-a{max-height:0; overflow:hidden; transition:max-height .5s var(--ease);}
+.faq-a-inner{padding:0 4px 30px; font-size:14.5px; max-width:62ch;}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer{background:var(--c-ink); color:rgba(250,248,243,.58); padding:90px 0 34px;}
+.footer-top{display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:50px; padding-bottom:70px; border-bottom:1px solid rgba(250,248,243,.1);}
+@media (max-width:820px){ .footer-top{grid-template-columns:1fr 1fr; row-gap:44px;} }
+.footer-brand .logo{color:var(--c-paper); font-size:21px;}
+.footer-brand p{margin-top:18px; font-size:13.5px; max-width:32ch;}
+.footer-col h5{font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:#c9c0a8; margin-bottom:20px;}
+.footer-col a{display:block; font-size:14px; color:rgba(250,248,243,.68); margin-bottom:13px; transition:color .3s;}
+.footer-col a:hover{color:var(--c-paper);}
+.footer-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:28px; font-size:12px; color:rgba(250,248,243,.38); flex-wrap:wrap; gap:14px;}
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--c-accent); outline-offset:3px;
+}
+</style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+<div class="grain"></div>
+
+<!-- ============ NAV ============ -->
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#top" class="logo">LIVE <em>EXPERIENCE</em></a>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button><button type="button" data-lang="es">ES</button>
+      </div>
+      <nav class="primary">
+        <a class="navlink" data-i18n="nav.philosophy" href="#philosophy">Philosophy</a>
+        <a class="navlink" data-i18n="nav.experiences" href="#experiences">Experiences</a>
+        <a class="navlink" data-i18n="nav.sports" href="#sports">Sports</a>
+        <a class="navlink" data-i18n="nav.process" href="#process">Process</a>
+        <a class="btn btn-ghost-dark" data-i18n="cta.designExperience" href="#enquire">Design Your Experience</a>
+      </nav>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <svg aria-hidden="true" width="26" height="26" viewBox="0 0 26 26"><path d="M3 7h20M3 13h20M3 19h20" stroke="currentColor" stroke-width="1.3"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mobileMenu">
+  <button type="button" class="close-btn" id="navClose" aria-label="Close menu">
+    <svg aria-hidden="true" width="26" height="26" viewBox="0 0 26 26"><path d="M5 5l16 16M21 5L5 21" stroke="currentColor" stroke-width="1.3"/></svg>
+  </button>
+  <a data-i18n="nav.philosophy" href="#philosophy">Philosophy</a>
+  <a data-i18n="nav.experiences" href="#experiences">Experiences</a>
+  <a data-i18n="nav.sports" href="#sports">Sports</a>
+  <a data-i18n="nav.process" href="#process">Process</a>
+  <a data-i18n="cta.designExperience" href="#enquire">Design Your Experience</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-content">
+    <span class="eyebrow" data-i18n="hero.eyebrow">South of Spain — By Private Invitation</span>
+    <h1 data-i18n="hero.h1" data-i18n-html>Some weeks <span class="serif-italic">change</span> everything.</h1>
+    <p class="lede" data-i18n="hero.lede">We design fully personalised sporting, gastronomic and lifestyle experiences across the south of Spain, where performance meets rest and every detail is considered long before you arrive.</p>
+    <div class="hero-actions">
+      <a href="#enquire" class="btn btn-solid" data-i18n="cta.designExperience">Design Your Experience</a>
+      <a href="#philosophy" class="hero-scroll-hint">
+        <span data-i18n="hero.scrollHint">Discover the philosophy</span>
+        <svg aria-hidden="true" width="12" height="16" viewBox="0 0 12 16"><path d="M6 0v15M1 10l5 5 5-5" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-coords">
+    <span>36.7213° N, 4.4214° W</span>
+    <span data-i18n="hero.coordRegion">Andalusia — Costa del Sol — Sierra de Ronda</span>
+  </div>
+  <div class="hero-hairline"></div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section id="philosophy">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="philosophy.eyebrow">Philosophy</span>
+      <h2 class="philosophy-lead" data-i18n="philosophy.leadHtml" data-i18n-html>We do not sell holidays.<br>We do not sell training camps.</h2>
+    </div>
+
+    <p class="reveal" style="max-width:56ch; font-size:16.5px;" data-i18n="philosophy.body">We design experiences — singular, considered, built around one person or one group — where sport, gastronomy, culture, rest and nature are brought together with the same care as a tasting menu, or a suit cut to measure. Our aim is simple, and not modest: that the week we design becomes one of the finest of your life.</p>
+
+    <div class="equation" id="equation">
+      <div class="eq-item reveal">
+        <div class="eq-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><path d="M12 8v7M8 22l4-7 4 7M6 13l6 2 6-2"/></svg></div>
+        <span class="eq-label" data-i18n="eq.sport">Sport</span>
+      </div>
+      <span class="eq-sign reveal">+</span>
+      <div class="eq-item reveal reveal-delay-1">
+        <div class="eq-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 3v7a3 3 0 006 0V3M8 10v11M17 3c-2 2-2 5-2 8 0 1.5 1 2 2 2s2-.5 2-2c0-3 0-6-2-8zM17 13v8"/></svg></div>
+        <span class="eq-label" data-i18n="eq.gastronomy">Gastronomy</span>
+      </div>
+      <span class="eq-sign reveal">+</span>
+      <div class="eq-item reveal reveal-delay-2">
+        <div class="eq-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 20c2-8 4-14 8-16 4 2 6 8 8 16M8 15c2-1 6-1 8 0"/></svg></div>
+        <span class="eq-label" data-i18n="eq.culture">Culture</span>
+      </div>
+      <span class="eq-sign reveal">+</span>
+      <div class="eq-item reveal reveal-delay-3">
+        <div class="eq-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <span class="eq-label" data-i18n="eq.rest">Rest</span>
+      </div>
+      <span class="eq-sign reveal">+</span>
+      <div class="eq-item reveal reveal-delay-4">
+        <div class="eq-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c3 3 5 6.5 5 10a5 5 0 01-10 0c0-3.5 2-7 5-10z"/></svg></div>
+        <span class="eq-label" data-i18n="eq.nature">Nature</span>
+      </div>
+      <span class="eq-sign reveal">=</span>
+      <div class="eq-result reveal">
+        <div class="eq-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z"/></svg></div>
+        <span class="eq-label" data-i18n="eq.result">Your Experience</span>
+      </div>
+    </div>
+
+    <div class="values-flow">
+      <div class="value-item reveal"><h4 data-i18n="values.time.title">Time</h4><p data-i18n="values.time.body">The freedom to move at the pace the week deserves.</p></div>
+      <div class="value-item reveal reveal-delay-1"><h4 data-i18n="values.freedom.title">Freedom</h4><p data-i18n="values.freedom.body">No itinerary you didn't ask for. Nothing you must do.</p></div>
+      <div class="value-item reveal reveal-delay-2"><h4 data-i18n="values.exclusivity.title">Exclusivity</h4><p data-i18n="values.exclusivity.body">One proposal, written for one client. Never a catalogue.</p></div>
+      <div class="value-item reveal reveal-delay-3"><h4 data-i18n="values.personalisation.title">Personalisation</h4><p data-i18n="values.personalisation.body">Every detail considered against who is travelling, not who is booking.</p></div>
+      <div class="value-item reveal"><h4 data-i18n="values.quality.title">Quality</h4><p data-i18n="values.quality.body">A curated circle of partners we would return to ourselves.</p></div>
+      <div class="value-item reveal reveal-delay-1"><h4 data-i18n="values.attention.title">Attention</h4><p data-i18n="values.attention.body">The small things decide whether a week is remembered.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section-stone">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="how.eyebrow">How It Works</span>
+      <h2 data-i18n="how.heading">Three conversations. One week you won't forget.</h2>
+    </div>
+    <div class="steps-row reveal">
+      <div class="step-col">
+        <span class="step-num">01</span>
+        <h4 data-i18n="how.step1.title">You share your vision</h4>
+        <p data-i18n="how.step1.body">A short private form and, if useful, a call — so we understand you, not a segment.</p>
+      </div>
+      <div class="step-col">
+        <span class="step-num">02</span>
+        <h4 data-i18n="how.step2.title">We design your experience</h4>
+        <p data-i18n="how.step2.body">Sport, stay, table and rhythm, composed into a single proposal built only for you.</p>
+      </div>
+      <div class="step-col">
+        <span class="step-num">03</span>
+        <h4 data-i18n="how.step3.title">You live it</h4>
+        <p data-i18n="how.step3.body">We handle every detail on the ground, quietly, so you never have to think twice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCES ============ -->
+<section id="experiences">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="exp.eyebrow">Experiences</span>
+      <h2 data-i18n="exp.heading">Four starting points. Infinite versions.</h2>
+      <p data-i18n="exp.sub">Every proposal begins as a conversation, not a catalogue — these are simply the directions our clients most often set out from.</p>
+    </div>
+  </div>
+
+  <div class="exp-grid reveal">
+    <div class="exp-card">
+      <div class="photo-frame wide pf-tint-1">
+        <!-- Replace with real photography: Real Novo Sancti Petri golf course, Chiclana de la Frontera -->
+        <svg aria-hidden="true" class="pf-art" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice">
+          <line x1="0" y1="95" x2="640" y2="95" stroke-width="1"/>
+          <path class="fill" d="M35 95 L52 55 L69 95 Z M58 95 L78 42 L98 95 Z M85 95 L102 60 L119 95 Z"/>
+          <path d="M0 400 C 150 250, 300 260, 380 150 S 560 60, 640 40" stroke-width="1.2"/>
+          <circle cx="516" cy="92" r="46" stroke-width="1"/>
+          <line x1="516" y1="92" x2="516" y2="40" stroke-width="1.2"/>
+          <path class="fill" d="M516 40 L546 50 L516 61 Z"/>
+          <path d="M424 138 Q466 116 508 142 Q476 164 424 138 Z" stroke-width="1"/>
+        </svg>
+        <span class="pf-caption" data-i18n="exp.card1.caption">Golf — Chiclana de la Frontera</span>
+      </div>
+      <div class="exp-body">
+        <span class="tag" data-i18n="exp.tag">Itinerary Concept</span>
+        <h3 data-i18n="exp.card1.title">The Performance Retreat</h3>
+        <p data-i18n="exp.card1.desc">A private coaching block on championship courses along the Costa de la Luz, paired with fine dining and full recovery.</p>
+        <a href="#enquire" class="exp-more"><span data-i18n="exp.cta">Start this direction</span> <svg aria-hidden="true" viewBox="0 0 14 10"><path d="M0 5h13M8 0l5 5-5 5" stroke="currentColor" fill="none" stroke-width="1.2"/></svg></a>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="photo-frame wide pf-tint-2">
+        <!-- Replace with real photography: padel/tennis courts, Chiclana de la Frontera -->
+        <svg aria-hidden="true" class="pf-art" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet">
+          <rect x="210" y="40" width="220" height="320" stroke-width="1"/>
+          <rect x="195" y="25" width="250" height="350" stroke-width="1" stroke-dasharray="3 7"/>
+          <line x1="210" y1="200" x2="430" y2="200" stroke-width="1.5"/>
+          <line x1="210" y1="140" x2="430" y2="140" stroke-width="1"/>
+          <line x1="210" y1="260" x2="430" y2="260" stroke-width="1"/>
+          <line x1="320" y1="40" x2="320" y2="140" stroke-width="1"/>
+          <line x1="320" y1="260" x2="320" y2="360" stroke-width="1"/>
+        </svg>
+        <span class="pf-caption" data-i18n="exp.card2.caption">Padel &amp; Tennis — Chiclana de la Frontera</span>
+      </div>
+      <div class="exp-body">
+        <span class="tag" data-i18n="exp.tag">Itinerary Concept</span>
+        <h3 data-i18n="exp.card2.title">The Racket Sports Week</h3>
+        <p data-i18n="exp.card2.desc">Daily coaching in padel, tennis or both, on real courts, with matches arranged to suit your level.</p>
+        <a href="#enquire" class="exp-more"><span data-i18n="exp.cta">Start this direction</span> <svg aria-hidden="true" viewBox="0 0 14 10"><path d="M0 5h13M8 0l5 5-5 5" stroke="currentColor" fill="none" stroke-width="1.2"/></svg></a>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="photo-frame wide pf-tint-3">
+        <!-- Replace with real photography: private training studio / gym -->
+        <svg aria-hidden="true" class="pf-art" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet">
+          <line x1="150" y1="200" x2="490" y2="200" stroke-width="5"/>
+          <rect x="118" y="163" width="22" height="74" rx="3" stroke-width="1.4"/>
+          <rect x="150" y="147" width="18" height="106" rx="3" stroke-width="1.4"/>
+          <rect x="472" y="147" width="18" height="106" rx="3" stroke-width="1.4"/>
+          <rect x="500" y="163" width="22" height="74" rx="3" stroke-width="1.4"/>
+        </svg>
+        <span class="pf-caption" data-i18n="exp.card3.caption">Private Training Studio</span>
+      </div>
+      <div class="exp-body">
+        <span class="tag" data-i18n="exp.tag">Itinerary Concept</span>
+        <h3 data-i18n="exp.card3.title">The Strength Block</h3>
+        <p data-i18n="exp.card3.desc">Strength and conditioning with a dedicated coach — programmed, measured and adjusted day by day.</p>
+        <a href="#enquire" class="exp-more"><span data-i18n="exp.cta">Start this direction</span> <svg aria-hidden="true" viewBox="0 0 14 10"><path d="M0 5h13M8 0l5 5-5 5" stroke="currentColor" fill="none" stroke-width="1.2"/></svg></a>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="photo-frame wide pf-tint-4">
+        <!-- Replace with real photography: relaxed dining / villa terrace, Andalusia -->
+        <svg aria-hidden="true" class="pf-art" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice">
+          <path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z" transform="translate(180,120) scale(6)"/>
+          <line x1="0" y1="330" x2="640" y2="330" stroke-width="1"/>
+        </svg>
+        <span class="pf-caption" data-i18n="exp.card4.caption">Andalusia</span>
+      </div>
+      <div class="exp-body">
+        <span class="tag" data-i18n="exp.tag">Itinerary Concept</span>
+        <h3 data-i18n="exp.card4.title">The Complete Week</h3>
+        <p data-i18n="exp.card4.desc">Your chosen sport, woven together with gastronomy, rest and culture into a single, unhurried week.</p>
+        <a href="#enquire" class="exp-more"><span data-i18n="exp.cta">Start this direction</span> <svg aria-hidden="true" viewBox="0 0 14 10"><path d="M0 5h13M8 0l5 5-5 5" stroke="currentColor" fill="none" stroke-width="1.2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPORTS ============ -->
+<section class="section-stone" id="sports">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="sports.eyebrow">Sports</span>
+      <h2 data-i18n="sports.heading">Built around your discipline, your level, your goal.</h2>
+    </div>
+
+    <div class="sports-grid reveal">
+      <div class="sport-feature">
+        <span class="sf-num">01</span>
+        <div class="sf-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+        <h3 data-i18n="sports.golf">Golf</h3>
+        <p data-i18n="sports.golf.desc">Championship courses along the Costa de la Luz, with private coaching at every level.</p>
+      </div>
+      <div class="sport-feature">
+        <span class="sf-num">02</span>
+        <div class="sf-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="14" rx="5"/><path d="M9 17v4h6v-4"/></svg></div>
+        <h3 data-i18n="sports.padel">Padel</h3>
+        <p data-i18n="sports.padel.desc">Europe's fastest-growing racket sport, played on real courts, matched to your level.</p>
+      </div>
+      <div class="sport-feature">
+        <span class="sf-num">03</span>
+        <div class="sf-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><path d="M12 16v6M8 22h8"/></svg></div>
+        <h3 data-i18n="sports.tennis">Tennis</h3>
+        <p data-i18n="sports.tennis.desc">Classic technique and modern conditioning, on courts built for serious play.</p>
+      </div>
+      <div class="sport-feature">
+        <span class="sf-num">04</span>
+        <div class="sf-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><rect x="2" y="9" width="3" height="6" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1"/></svg></div>
+        <h3 data-i18n="sports.gym">Gym &amp; Personal Training</h3>
+        <p data-i18n="sports.gym.desc">Strength, conditioning and recovery with a dedicated coach — never a hotel gym.</p>
+      </div>
+    </div>
+    <p class="sports-footnote reveal" data-i18n="sports.footnote">Four disciplines. No filler. Everything we do, we do properly.</p>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="section-ink">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="why.eyebrow">Why Live Experience</span>
+      <h2 data-i18n="why.heading">Discretion, depth and one client at a time.</h2>
+    </div>
+  </div>
+  <div class="why-grid reveal">
+    <div class="why-tile"><span class="num">01</span><h4 data-i18n="why.tile1.title">A dedicated experience designer</h4><p data-i18n="why.tile1.body">One point of contact who understands your brief in full — never a call centre, never a template.</p></div>
+    <div class="why-tile"><span class="num">02</span><h4 data-i18n="why.tile2.title">Absolute discretion</h4><p data-i18n="why.tile2.body">Your plans, your presence and your preferences remain strictly private, before, during and after.</p></div>
+    <div class="why-tile"><span class="num">03</span><h4 data-i18n="why.tile3.title">A curated network</h4><p data-i18n="why.tile3.body">Coaches, chefs, estates and clubs across the south of Spain, chosen for standard, not visibility.</p></div>
+    <div class="why-tile"><span class="num">04</span><h4 data-i18n="why.tile4.title">No fixed packages</h4><p data-i18n="why.tile4.body">Every proposal is written from a blank page, for one client, one week, one purpose.</p></div>
+    <div class="why-tile"><span class="num">05</span><h4 data-i18n="why.tile5.title">Local expertise, held deeply</h4><p data-i18n="why.tile5.body">Years of relationships across sport, gastronomy and hospitality — knowledge that cannot be booked online.</p></div>
+    <div class="why-tile"><span class="num">06</span><h4 data-i18n="why.tile6.title">A limited number of weeks each season</h4><p data-i18n="why.tile6.body">We design few experiences at a time, deliberately, so that each receives full attention.</p></div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="process.eyebrow">Process</span>
+      <h2 data-i18n="process.heading">What happens after you reach out.</h2>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="tl-item"><span class="tl-dot"></span><span class="tl-meta" data-i18n="process.step1.meta">Step 01</span><h4 data-i18n="process.step1.title">Enquiry</h4><p data-i18n="process.step1.body">You complete a short, private form — the starting point of a conversation, not a booking.</p></div>
+      <div class="tl-item"><span class="tl-dot"></span><span class="tl-meta" data-i18n="process.step2.meta">Step 02</span><h4 data-i18n="process.step2.title">Discovery</h4><p data-i18n="process.step2.body">A member of our team reaches out, by call or message, to understand you and your goals in depth.</p></div>
+      <div class="tl-item"><span class="tl-dot"></span><span class="tl-meta" data-i18n="process.step3.meta">Step 03 — Typically within 5 business days</span><h4 data-i18n="process.step3.title">Design</h4><p data-i18n="process.step3.body">We build a complete proposal — sport, stay, table, rhythm — written for you and no one else.</p></div>
+      <div class="tl-item"><span class="tl-dot"></span><span class="tl-meta" data-i18n="process.step4.meta">Step 04</span><h4 data-i18n="process.step4.title">Refinement</h4><p data-i18n="process.step4.body">You review it. We adjust whatever isn't quite right, until every detail feels considered.</p></div>
+      <div class="tl-item"><span class="tl-dot"></span><span class="tl-meta" data-i18n="process.step5.meta">Step 05</span><h4 data-i18n="process.step5.title">The Experience</h4><p data-i18n="process.step5.body">We handle every detail on the ground, so your only task is to arrive.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORM ============ -->
+<section class="section-stone" id="enquire">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow" data-i18n="form.eyebrow">Design Your Experience</span>
+      <h2 data-i18n="form.heading" data-i18n-html>This isn't a booking form.<br>It's the start of a conversation.</h2>
+      <p style="margin-left:auto;margin-right:auto;" data-i18n="form.sub">Tell us who you are, and what a perfect week would feel like. We'll take care of the rest.</p>
+    </div>
+
+    <div class="form-wrap reveal">
+      <div class="form-progress" id="formProgress">
+        <div class="fp-step active" data-step="1"><span class="fp-n">01</span><span data-i18n="form.progress.step1">About You</span></div>
+        <div class="fp-step" data-step="2"><span class="fp-n">02</span><span data-i18n="form.progress.step2">Your Trip</span></div>
+        <div class="fp-step" data-step="3"><span class="fp-n">03</span><span data-i18n="form.progress.step3">Sport &amp; Goals</span></div>
+        <div class="fp-step" data-step="4"><span class="fp-n">04</span><span data-i18n="form.progress.step4">Stay &amp; Lifestyle</span></div>
+        <div class="fp-step" data-step="5"><span class="fp-n">05</span><span data-i18n="form.progress.step5">Your Vision</span></div>
+      </div>
+
+      <form class="form-body" id="experienceForm" novalidate>
+
+        <!-- STEP 1 -->
+        <div class="form-step active" data-step="1">
+          <h3 data-i18n="form.step1.title">About you</h3>
+          <p class="fs-sub" data-i18n="form.step1.sub">So we know who we're designing for.</p>
+          <div class="field-grid">
+            <div class="field"><label data-i18n="form.label.firstName" for="firstName">First name</label><input id="firstName" name="firstName" type="text" autocomplete="given-name" required></div>
+            <div class="field"><label data-i18n="form.label.lastName" for="lastName">Last name</label><input id="lastName" name="lastName" type="text" autocomplete="family-name" required></div>
+            <div class="field"><label data-i18n="form.label.country" for="country">Country of residence</label>
+              <select id="country" name="country" autocomplete="country-name" required>
+                <option value="" disabled selected hidden data-i18n="form.ph.country">Select country</option>
+                <option value="Switzerland" data-i18n="opt.switzerland">Switzerland</option>
+                <option value="Sweden" data-i18n="opt.sweden">Sweden</option>
+                <option value="Norway" data-i18n="opt.norway">Norway</option>
+                <option value="Denmark" data-i18n="opt.denmark">Denmark</option>
+                <option value="Germany" data-i18n="opt.germany">Germany</option>
+                <option value="United Kingdom" data-i18n="opt.uk">United Kingdom</option>
+                <option value="United States" data-i18n="opt.us">United States</option>
+                <option value="Other" data-i18n="opt.other">Other</option>
+              </select>
+            </div>
+            <div class="field"><label data-i18n="form.label.language" for="language">Preferred language</label>
+              <select id="language" name="language" required>
+                <option value="" disabled selected hidden data-i18n="form.ph.language">Select language</option>
+                <option value="English" data-i18n="opt.langEnglish">English</option>
+                <option value="German" data-i18n="opt.langGerman">German</option>
+                <option value="Swedish" data-i18n="opt.langSwedish">Swedish</option>
+                <option value="Norwegian" data-i18n="opt.langNorwegian">Norwegian</option>
+                <option value="Danish" data-i18n="opt.langDanish">Danish</option>
+                <option value="Spanish" data-i18n="opt.langSpanish">Spanish</option>
+              </select>
+            </div>
+            <div class="field"><label data-i18n="form.label.email" for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+            <div class="field"><label data-i18n="form.label.phone" for="phone">Phone (with country code)</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step" data-step="2">
+          <h3 data-i18n="form.step2.title">Your trip</h3>
+          <p class="fs-sub" data-i18n="form.step2.sub">Rough dates are perfectly fine — precision comes later.</p>
+          <div class="field-grid">
+            <div class="field date-field">
+              <label data-i18n="form.label.dates">Approximate dates</label>
+              <button type="button" class="date-trigger" id="dateTrigger" data-i18n="form.datesPlaceholder">Select your dates</button>
+              <div class="date-panel" id="datePanel">
+                <div class="date-panel-row">
+                  <div class="field"><label data-i18n="form.label.arrival" for="dateStart">Arrival</label><input id="dateStart" type="date"></div>
+                  <div class="field"><label data-i18n="form.label.departure" for="dateEnd">Departure</label><input id="dateEnd" type="date"></div>
+                </div>
+                <label class="consent-row" style="margin-top:16px;">
+                  <input type="checkbox" id="datesFlexible">
+                  <span data-i18n="form.datesFlexible">My dates are flexible</span>
+                </label>
+                <button type="button" class="btn btn-outline" id="dateApply" style="margin-top:18px;" data-i18n="form.datesApply">Apply</button>
+              </div>
+              <input type="hidden" id="dates" name="dates">
+            </div>
+            <div class="field"><label data-i18n="form.label.people" for="people">Number of people</label><input id="people" name="people" type="number" min="1" data-i18n-ph="form.ph.people" placeholder="e.g. 2"></div>
+            <div class="field full"><label data-i18n="form.label.reason">Reason for travel</label>
+              <div class="radio-row" data-group="reason">
+                <label class="chip"><input type="radio" name="reason" value="Personal escape"><span data-i18n="opt.reasonPersonal">Personal escape</span></label>
+                <label class="chip"><input type="radio" name="reason" value="Couple"><span data-i18n="opt.reasonCouple">Couple</span></label>
+                <label class="chip"><input type="radio" name="reason" value="Family"><span data-i18n="opt.reasonFamily">Family</span></label>
+                <label class="chip"><input type="radio" name="reason" value="Friends group"><span data-i18n="opt.reasonFriends">Friends group</span></label>
+                <label class="chip"><input type="radio" name="reason" value="Corporate / incentive"><span data-i18n="opt.reasonCorporate">Corporate / incentive</span></label>
+              </div>
+            </div>
+            <div class="field full"><label data-i18n="form.label.occasion" for="occasion">Celebrating a special occasion?</label><input id="occasion" name="occasion" type="text" data-i18n-ph="form.ph.occasion" placeholder="e.g. 50th birthday, anniversary — or leave blank"></div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="form-step" data-step="3">
+          <h3 data-i18n="form.step3.title">Sport &amp; goals</h3>
+          <p class="fs-sub" data-i18n="form.step3.sub">What should the week be built around?</p>
+          <div class="field-grid">
+            <div class="field full"><label data-i18n="form.label.sport">Sport(s) of interest</label>
+              <div class="radio-row" data-group="sport" data-multi="true">
+                <label class="chip"><input type="checkbox" name="sport" value="Golf"><span data-i18n="sports.golf">Golf</span></label>
+                <label class="chip"><input type="checkbox" name="sport" value="Padel"><span data-i18n="sports.padel">Padel</span></label>
+                <label class="chip"><input type="checkbox" name="sport" value="Tennis"><span data-i18n="sports.tennis">Tennis</span></label>
+                <label class="chip"><input type="checkbox" name="sport" value="Gym / Personal Training"><span data-i18n="sports.gym">Gym &amp; Personal Training</span></label>
+                <label class="chip"><input type="checkbox" name="sport" value="Other"><span data-i18n="opt.other">Other</span></label>
+              </div>
+            </div>
+            <div class="field full" id="sportLevels" style="display:none;">
+              <label data-i18n="form.label.levelPerSport">Level, per sport</label>
+              <div id="sportLevelRows" class="sport-level-rows"></div>
+            </div>
+            <div class="field"><label data-i18n="form.label.goal" for="goal">Goal of the trip</label>
+              <select id="goal" name="goal">
+                <option value="" disabled selected hidden data-i18n="form.ph.goal">Select goal</option>
+                <option value="Performance & training" data-i18n="opt.goalPerformance">Performance &amp; training</option>
+                <option value="Rest & recovery" data-i18n="opt.goalRest">Rest &amp; recovery</option>
+                <option value="Discovery & culture" data-i18n="opt.goalDiscovery">Discovery &amp; culture</option>
+                <option value="Celebration" data-i18n="opt.goalCelebration">Celebration</option>
+                <option value="A balance of everything" data-i18n="opt.goalBalance">A balance of everything</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="form-step" data-step="4">
+          <h3 data-i18n="form.step4.title">Stay &amp; lifestyle</h3>
+          <p class="fs-sub" data-i18n="form.step4.sub">The setting matters as much as the schedule.</p>
+          <div class="field-grid">
+            <div class="field"><label data-i18n="form.label.mealPlan" for="mealPlan">Meal plan preference</label>
+              <select id="mealPlan" name="mealPlan">
+                <option value="" disabled selected hidden data-i18n="form.ph.mealPlan">Select meal plan</option>
+                <option value="Breakfast only" data-i18n="opt.mealBreakfast">Breakfast only</option>
+                <option value="Half board" data-i18n="opt.mealHalf">Half board</option>
+                <option value="Full board" data-i18n="opt.mealFull">Full board</option>
+                <option value="No preference" data-i18n="opt.mealNone">No preference</option>
+              </select>
+            </div>
+            <div class="field full"><label data-i18n="form.label.diet" for="diet">Dietary preferences or restrictions</label><input id="diet" name="diet" type="text" data-i18n-ph="form.ph.diet" placeholder="e.g. vegetarian, gluten-free, none"></div>
+            <div class="field full"><label data-i18n="form.label.activities" for="activities">Optional activities you'd enjoy</label><input id="activities" name="activities" type="text" data-i18n-ph="form.ph.activities" placeholder="e.g. wine tasting, cooking class, spa, boat day"></div>
+            <div class="field full"><label data-i18n="form.label.transport">Transport needs</label>
+              <div class="radio-row" data-group="transport">
+                <label class="chip"><input type="radio" name="transport" value="Handle everything"><span data-i18n="opt.transferAll">Handle everything for me</span></label>
+                <label class="chip"><input type="radio" name="transport" value="Airport transfers only"><span data-i18n="opt.transferOnly">Airport transfers only</span></label>
+                <label class="chip"><input type="radio" name="transport" value="Self-managed"><span data-i18n="opt.transferSelf">I'll manage my own</span></label>
+                <label class="chip"><input type="radio" name="transport" value="Not sure"><span data-i18n="opt.transferUnsure">Not sure</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="form-step" data-step="5">
+          <h3 data-i18n="form.step5.title">Your vision</h3>
+          <p class="fs-sub" data-i18n="form.step5.sub">The last few details, and the most important one.</p>
+          <div class="field-grid">
+            <div class="field"><label data-i18n="form.label.heard" for="heard">How did you hear about us?</label>
+              <select id="heard" name="heard">
+                <option value="" disabled selected hidden data-i18n="form.ph.heard">Select an option</option>
+                <option value="Personal recommendation" data-i18n="opt.heardRecommendation">Personal recommendation</option>
+                <option value="Instagram" data-i18n="opt.heardInstagram">Instagram</option>
+                <option value="Google search" data-i18n="opt.heardGoogle">Google search</option>
+                <option value="Concierge / travel advisor" data-i18n="opt.heardConcierge">Concierge / travel advisor</option>
+                <option value="Other" data-i18n="opt.other">Other</option>
+              </select>
+            </div>
+            <div class="field"><label data-i18n="form.label.budget" for="budget">Approximate budget per person</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected hidden data-i18n="form.ph.budget">Select a range</option>
+                <option value="€3,000 – €5,000">€3,000 – €5,000</option>
+                <option value="€5,000 – €8,000">€5,000 – €8,000</option>
+                <option value="€8,000 – €10,000">€8,000 – €10,000</option>
+                <option value="€10,000+">€10,000+</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label data-i18n="form.label.vision" for="vision">What would the perfect trip look like for you?</label>
+              <textarea id="vision" name="vision" data-i18n-ph="form.ph.vision" placeholder="Write as much or as little as you like — this is what we design from."></textarea>
+            </div>
+            <div class="field full">
+              <label class="consent-row">
+                <input type="checkbox" id="consent" name="consent" required>
+                <span data-i18n="form.consentHtml" data-i18n-html>I agree to be contacted about my enquiry, in line with the <a href="privacy.html" target="_blank">Privacy Policy</a>.</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn-plain" id="prevBtn" disabled>
+            <svg aria-hidden="true" width="14" height="10" viewBox="0 0 14 10"><path d="M14 5H1M6 0L1 5l5 5" stroke="currentColor" fill="none" stroke-width="1.2"/></svg>
+            <span data-i18n="form.nav.back">Back</span>
+          </button>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-outline" id="nextBtn" data-i18n="form.nav.continue">Continue</button>
+          <button type="submit" class="btn btn-solid" id="submitBtn" style="display:none;" data-i18n="form.nav.submit">Send Request</button>
+        </div>
+      </form>
+
+      <div class="thankyou" id="thankYou">
+        <div class="ty-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg></div>
+        <h3 data-i18n="form.thankyou.title">Request received.</h3>
+        <p data-i18n="form.thankyou.body">Thank you — a member of our team will be in touch within one business day to begin designing your experience. Until then, thank you for trusting us with the beginning of it.</p>
+      </div>
+    </div>
+    <p class="direct-contact reveal" data-i18n="form.directContactHtml" data-i18n-html>Prefer to speak directly? <a href="https://wa.me/34000000000" target="_blank">WhatsApp us</a> or write to <a href="mailto:hello@liveexperience.example">hello@liveexperience.example</a>.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="faq.eyebrow">Questions</span>
+      <h2 data-i18n="faq.heading">Before you write to us.</h2>
+    </div>
+
+    <div class="faq-list reveal" style="max-width:800px;">
+      <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q1.title">How far in advance should I enquire?</span><span class="plus"></span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.q1.body">Most experiences are designed six to twelve weeks ahead, though we have arranged trips with far less notice. The earlier you write to us, the more freedom we have in the design.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q2.title">Is this only for elite athletes?</span><span class="plus"></span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.q2.body">No. We design for every level, from a first padel lesson to competitive training blocks. What matters is intention, not ability.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q3.title">Can you host groups, families or corporate teams?</span><span class="plus"></span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.q3.body">Yes. Many of our experiences are designed for couples, families and small groups, and we regularly design private incentive trips for teams.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q4.title">What exactly is included in the proposal?</span><span class="plus"></span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.q4.body">A complete, day-by-day plan covering your stay, your sport, your table and your free time — along with full pricing, before anything is confirmed.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q5.title">Is everything truly private and personalised?</span><span class="plus"></span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.q5.body">Yes. We do not run group departures or shared itineraries. Every proposal is built once, for one client, and is never reused.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q6.title">What if I don't know exactly what I want yet?</span><span class="plus"></span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.q6.body">That's the most common starting point. Share what you can, and our team will ask the right questions during the discovery call.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q7.title">Which regions do you cover?</span><span class="plus"></span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.q7.body">Primarily the south of Spain — Andalusia's coastline, countryside and mountains — with select experiences extending further on request.</div></div></div>
+      <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q8.title">Do you require a deposit to begin designing?</span><span class="plus"></span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.q8.body">No. The design process is complimentary and without obligation. You only commit once the proposal reflects exactly what you had in mind.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo">LIVE <em>EXPERIENCE</em></a>
+        <p data-i18n="footer.tagline">A private design studio for bespoke sporting and lifestyle experiences across the south of Spain.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.explore">Explore</h5>
+        <a data-i18n="nav.philosophy" href="#philosophy">Philosophy</a>
+        <a data-i18n="nav.experiences" href="#experiences">Experiences</a>
+        <a data-i18n="nav.sports" href="#sports">Sports</a>
+        <a data-i18n="nav.process" href="#process">Process</a>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.enquire">Enquire</h5>
+        <a data-i18n="cta.designExperience" href="#enquire">Design Your Experience</a>
+        <a href="mailto:hello@liveexperience.example">hello@liveexperience.example</a>
+        <a href="tel:+34000000000">+34&nbsp;000&nbsp;000&nbsp;000</a>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.studio">Studio</h5>
+        <a data-i18n="footer.privacy" href="privacy.html">Privacy Policy</a>
+        <a data-i18n="footer.terms" href="terms.html">Terms of Service</a>
+        <a data-i18n="footer.instagram" href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Live Experience. All rights reserved.</span>
+      <span data-i18n="footer.location">Andalusia, Spain</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- header solid on scroll ---------- */
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => header.classList.toggle('solid', window.scrollY > 60);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---------- mobile menu ---------- */
+  const navToggle = document.getElementById('navToggle');
+  const navClose = document.getElementById('navClose');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+  navClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  /* ---------- escape key closes mobile menu / date dropdown ---------- */
+  document.addEventListener('keydown', (e) => {
+    if(e.key !== 'Escape') return;
+    if(mobileMenu.classList.contains('open')){ mobileMenu.classList.remove('open'); }
+    if(dateField && dateField.classList.contains('open')){ dateField.classList.remove('open'); }
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  const revealEls = document.querySelectorAll('.reveal, .eq-item, .eq-sign, .eq-result');
+  if('IntersectionObserver' in window){
+    try{
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, {threshold:0.15});
+      revealEls.forEach(el => io.observe(el));
+    }catch(err){
+      revealEls.forEach(el => el.classList.add('in'));
+    }
+  } else {
+    // No IntersectionObserver support — show everything immediately rather than leaving it invisible.
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(open => {
+        open.classList.remove('open');
+        open.querySelector('.faq-a').style.maxHeight = null;
+        open.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+        q.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ---------- chip selects (radio & multi checkbox) ---------- */
+  document.querySelectorAll('.chip input').forEach(input => {
+    input.addEventListener('change', () => {
+      const group = input.closest('.radio-row');
+      if(input.type === 'radio'){
+        group.querySelectorAll('.chip').forEach(c => c.classList.remove('checked'));
+      }
+      input.closest('.chip').classList.toggle('checked', input.checked);
+    });
+  });
+
+  /* ---------- date range dropdown ---------- */
+  const dateField = document.querySelector('.date-field');
+  const dateTrigger = document.getElementById('dateTrigger');
+  const dateStart = document.getElementById('dateStart');
+  const dateEnd = document.getElementById('dateEnd');
+  const datesFlexible = document.getElementById('datesFlexible');
+  const dateApply = document.getElementById('dateApply');
+  const datesHidden = document.getElementById('dates');
+
+  const todayISO = new Date().toISOString().slice(0,10);
+  dateStart.setAttribute('min', todayISO);
+  dateEnd.setAttribute('min', todayISO);
+  dateStart.addEventListener('change', () => {
+    if(dateStart.value){ dateEnd.setAttribute('min', dateStart.value); }
+  });
+
+  dateTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dateField.classList.toggle('open');
+  });
+  document.addEventListener('click', (e) => {
+    if(dateField.classList.contains('open') && !dateField.contains(e.target)){
+      dateField.classList.remove('open');
+    }
+  });
+  function formatDate(v){
+    if(!v) return '';
+    const d = new Date(v + 'T00:00:00');
+    return d.toLocaleDateString(document.documentElement.lang === 'es' ? 'es-ES' : 'en-GB', {day:'numeric', month:'short', year:'numeric'});
+  }
+  function applyDates(){
+    const flex = datesFlexible.checked;
+    let label = '';
+    if(dateStart.value && dateEnd.value){
+      label = formatDate(dateStart.value) + ' – ' + formatDate(dateEnd.value);
+    } else if(dateStart.value){
+      label = formatDate(dateStart.value);
+    }
+    if(flex && label){ label += ' (flexible)'; }
+    else if(flex){ label = document.documentElement.lang === 'es' ? 'Fechas flexibles' : 'Flexible dates'; }
+    datesHidden.value = label;
+    if(label){ dateTrigger.textContent = label; dateTrigger.removeAttribute('data-i18n'); }
+    dateField.classList.remove('open');
+  }
+  dateApply.addEventListener('click', applyDates);
+  [dateStart, dateEnd, datesFlexible].forEach(el => el.addEventListener('change', applyDates));
+
+  /* ---------- dynamic per-sport level rows ---------- */
+  const sportLevelsWrap = document.getElementById('sportLevels');
+  const sportLevelRows = document.getElementById('sportLevelRows');
+  const levelOptions = [
+    {value:'Beginner', key:'opt.levelBeginner'},
+    {value:'Intermediate', key:'opt.levelIntermediate'},
+    {value:'Advanced', key:'opt.levelAdvanced'},
+    {value:'Competitive / Elite', key:'opt.levelElite'}
+  ];
+  function slugify(v){ return v.toLowerCase().replace(/[^a-z]+/g,'_'); }
+  function buildLevelOptionsHtml(){
+    return levelOptions.map(o => `<option value="${o.value}" data-i18n="${o.key}">${o.value}</option>`).join('');
+  }
+  document.querySelectorAll('input[name="sport"]').forEach(input => {
+    input.addEventListener('change', () => {
+      const sportValue = input.value;
+      const rowId = 'level_row_' + slugify(sportValue);
+      if(input.checked){
+        if(!document.getElementById(rowId)){
+          const row = document.createElement('div');
+          row.className = 'sport-level-row';
+          row.id = rowId;
+          const nameSpan = input.closest('.chip').querySelector('span[data-i18n]');
+          const nameKey = nameSpan ? nameSpan.getAttribute('data-i18n') : null;
+          row.innerHTML = `<span class="slr-name" ${nameKey ? `data-i18n="${nameKey}"` : ''}>${sportValue}</span>
+            <select name="level_${slugify(sportValue)}">
+              <option value="" disabled selected hidden data-i18n="form.ph.level">Select level</option>
+              ${buildLevelOptionsHtml()}
+            </select>`;
+          sportLevelRows.appendChild(row);
+          if(typeof window.__applyCurrentLang === 'function') window.__applyCurrentLang();
+        }
+      } else {
+        const existing = document.getElementById(rowId);
+        if(existing) existing.remove();
+      }
+      sportLevelsWrap.style.display = sportLevelRows.children.length ? 'block' : 'none';
+    });
+  });
+
+  /* ---------- multi-step form ---------- */
+  const form = document.getElementById('experienceForm');
+  const steps = Array.from(form.querySelectorAll('.form-step'));
+  const progressSteps = Array.from(document.querySelectorAll('.fp-step'));
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  const thankYou = document.getElementById('thankYou');
+  let current = 1;
+  const total = steps.length;
+
+  function renderStep(shouldScroll){
+    steps.forEach(s => s.classList.toggle('active', Number(s.dataset.step) === current));
+    progressSteps.forEach(p => {
+      const n = Number(p.dataset.step);
+      p.classList.toggle('active', n === current);
+      p.classList.toggle('done', n < current);
+    });
+    prevBtn.disabled = current === 1;
+    nextBtn.style.display = current === total ? 'none' : 'inline-flex';
+    submitBtn.style.display = current === total ? 'inline-flex' : 'none';
+    if(shouldScroll){ form.closest('.form-wrap').scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  function validateStep(stepEl){
+    const requiredFields = stepEl.querySelectorAll('[required]');
+    for(const f of requiredFields){
+      if(f.type === 'checkbox'){
+        if(!f.checked){ f.focus(); return false; }
+      } else if(!f.value){
+        f.focus(); f.style.borderColor = '#8f7a4d'; return false;
+      }
+    }
+    return true;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    const activeStep = steps.find(s => Number(s.dataset.step) === current);
+    if(!validateStep(activeStep)) return;
+    if(current < total){ current++; renderStep(true); }
+  });
+
+  prevBtn.addEventListener('click', () => { if(current > 1){ current--; renderStep(true); } });
+
+  /* -------------------------------------------------------
+     FORM SUBMISSION
+     -----------------------------------------------------
+     Wired to Formspree — a free, zero-backend way to receive
+     these enquiries by email. To activate:
+       1. Create a free account at https://formspree.io
+       2. Create a form, copy its endpoint (looks like
+          https://formspree.io/f/abcd1234)
+       3. Paste it below as FORMSPREE_ENDPOINT.
+     Until you do that, submissions are only logged to the
+     browser console so nothing breaks — replace this constant
+     as step 1 of going live.
+  ------------------------------------------------------- */
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  async function handleSubmit(data){
+    console.log('Experience request:', data);
+    if(FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) return; // not configured yet
+    try{
+      await fetch(FORMSPREE_ENDPOINT, {
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data)
+      });
+    }catch(err){ console.error('Submission failed:', err); }
+  }
+
+  function formToObject(formEl){
+    const fd = new FormData(formEl);
+    const obj = {};
+    for(const key of new Set(fd.keys())){
+      const values = fd.getAll(key);
+      obj[key] = values.length > 1 ? values.join(', ') : values[0];
+    }
+    return obj;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const activeStep = steps.find(s => Number(s.dataset.step) === current);
+    if(!validateStep(activeStep)) return;
+    const data = formToObject(form);
+    await handleSubmit(data);
+    form.style.display = 'none';
+    document.getElementById('formProgress').style.display = 'none';
+    thankYou.classList.add('active');
+  });
+
+  renderStep(false);
+
+  /* =========================================================
+     LANGUAGE SYSTEM
+     ========================================================= */
+  const translations = {
+    "nav.philosophy": {en:"Philosophy", es:"Filosofía"},
+    "nav.experiences": {en:"Experiences", es:"Experiencias"},
+    "nav.sports": {en:"Sports", es:"Deportes"},
+    "nav.process": {en:"Process", es:"Proceso"},
+    "cta.designExperience": {en:"Design Your Experience", es:"Diseña tu Experiencia"},
+
+    "hero.eyebrow": {en:"South of Spain — By Private Invitation", es:"Sur de España — Por Invitación Privada"},
+    "hero.h1": {en:'Some weeks <span class="serif-italic">change</span> everything.', es:'Hay semanas que lo <span class="serif-italic">cambian</span> todo.'},
+    "hero.lede": {en:"We design fully personalised sporting, gastronomic and lifestyle experiences across the south of Spain, where performance meets rest and every detail is considered long before you arrive.", es:"Diseñamos experiencias deportivas, gastronómicas y de estilo de vida completamente personalizadas en el sur de España, donde el rendimiento se une al descanso y cada detalle está pensado mucho antes de la llegada."},
+    "hero.scrollHint": {en:"Discover the philosophy", es:"Descubra la filosofía"},
+    "hero.coordRegion": {en:"Andalusia — Costa del Sol — Sierra de Ronda", es:"Andalucía — Costa del Sol — Sierra de Ronda"},
+
+    "philosophy.eyebrow": {en:"Philosophy", es:"Filosofía"},
+    "philosophy.leadHtml": {en:"We do not sell holidays.<br>We do not sell training camps.", es:"No vendemos vacaciones.<br>No vendemos campus de entrenamiento."},
+    "philosophy.body": {en:"We design experiences — singular, considered, built around one person or one group — where sport, gastronomy, culture, rest and nature are brought together with the same care as a tasting menu, or a suit cut to measure. Our aim is simple, and not modest: that the week we design becomes one of the finest of your life.", es:"Diseñamos experiencias — singulares, meditadas, construidas en torno a una persona o un grupo — donde el deporte, la gastronomía, la cultura, el descanso y la naturaleza se combinan con el mismo cuidado que un menú degustación, o un traje hecho a medida. Nuestro objetivo es simple, y nada modesto: que la semana que diseñamos se convierta en una de las mejores de su vida."},
+
+    "eq.sport": {en:"Sport", es:"Deporte"},
+    "eq.gastronomy": {en:"Gastronomy", es:"Gastronomía"},
+    "eq.culture": {en:"Culture", es:"Cultura"},
+    "eq.rest": {en:"Rest", es:"Descanso"},
+    "eq.nature": {en:"Nature", es:"Naturaleza"},
+    "eq.result": {en:"Your Experience", es:"Tu Experiencia"},
+
+    "values.time.title": {en:"Time", es:"Tiempo"},
+    "values.time.body": {en:"The freedom to move at the pace the week deserves.", es:"La libertad de avanzar al ritmo que la semana merece."},
+    "values.freedom.title": {en:"Freedom", es:"Libertad"},
+    "values.freedom.body": {en:"No itinerary you didn't ask for. Nothing you must do.", es:"Ningún itinerario que no se haya pedido. Nada obligatorio."},
+    "values.exclusivity.title": {en:"Exclusivity", es:"Exclusividad"},
+    "values.exclusivity.body": {en:"One proposal, written for one client. Never a catalogue.", es:"Una propuesta, escrita para un cliente. Nunca un catálogo."},
+    "values.personalisation.title": {en:"Personalisation", es:"Personalización"},
+    "values.personalisation.body": {en:"Every detail considered against who is travelling, not who is booking.", es:"Cada detalle pensado a partir de quién viaja, no de quién reserva."},
+    "values.quality.title": {en:"Quality", es:"Calidad"},
+    "values.quality.body": {en:"A curated circle of partners we would return to ourselves.", es:"Un círculo de colaboradores selecto, al que volveríamos nosotros mismos."},
+    "values.attention.title": {en:"Attention", es:"Atención"},
+    "values.attention.body": {en:"The small things decide whether a week is remembered.", es:"Los pequeños detalles deciden si una semana se recuerda."},
+
+    "how.eyebrow": {en:"How It Works", es:"Cómo Funciona"},
+    "how.heading": {en:"Three conversations. One week you won't forget.", es:"Tres conversaciones. Una semana inolvidable."},
+    "how.step1.title": {en:"You share your vision", es:"Comparta su visión"},
+    "how.step1.body": {en:"A short private form and, if useful, a call — so we understand you, not a segment.", es:"Un breve formulario privado y, si resulta útil, una llamada — para entenderle a usted, no a un perfil."},
+    "how.step2.title": {en:"We design your experience", es:"Diseñamos su experiencia"},
+    "how.step2.body": {en:"Sport, stay, table and rhythm, composed into a single proposal built only for you.", es:"Deporte, alojamiento, mesa y ritmo, compuestos en una única propuesta creada solo para usted."},
+    "how.step3.title": {en:"You live it", es:"Usted la vive"},
+    "how.step3.body": {en:"We handle every detail on the ground, quietly, so you never have to think twice.", es:"Nos ocupamos de cada detalle sobre el terreno, discretamente, para que usted no tenga que pensar en nada."},
+
+    "exp.eyebrow": {en:"Experiences", es:"Experiencias"},
+    "exp.heading": {en:"Four starting points. Infinite versions.", es:"Cuatro puntos de partida. Infinitas versiones."},
+    "exp.sub": {en:"Every proposal begins as a conversation, not a catalogue — these are simply the directions our clients most often set out from.", es:"Cada propuesta comienza como una conversación, no como un catálogo — estos son, simplemente, los puntos de partida más habituales de nuestros clientes."},
+    "exp.tag": {en:"Itinerary Concept", es:"Concepto de Itinerario"},
+    "exp.cta": {en:"Start this direction", es:"Comenzar por aquí"},
+    "exp.card1.caption": {en:"Golf — Chiclana de la Frontera", es:"Golf — Chiclana de la Frontera"},
+    "exp.card1.title": {en:"The Performance Retreat", es:"El Retiro de Rendimiento"},
+    "exp.card1.desc": {en:"A private coaching block on championship courses along the Costa de la Luz, paired with fine dining and full recovery.", es:"Un bloque de entrenamiento privado en campos de campeonato de la Costa de la Luz, junto a alta gastronomía y recuperación completa."},
+    "exp.card2.caption": {en:"Padel &amp; Tennis — Chiclana de la Frontera", es:"Pádel y Tenis — Chiclana de la Frontera"},
+    "exp.card2.title": {en:"The Racket Sports Week", es:"La Semana de Raqueta"},
+    "exp.card2.desc": {en:"Daily coaching in padel, tennis or both, on real courts, with matches arranged to suit your level.", es:"Entrenamiento diario en pádel, tenis o ambos, en pistas reales, con partidos organizados según su nivel."},
+    "exp.card3.caption": {en:"Private Training Studio", es:"Estudio de Entrenamiento Privado"},
+    "exp.card3.title": {en:"The Strength Block", es:"El Bloque de Fuerza"},
+    "exp.card3.desc": {en:"Strength and conditioning with a dedicated coach — programmed, measured and adjusted day by day.", es:"Fuerza y preparación física con un entrenador dedicado — programada, medida y ajustada día a día."},
+    "exp.card4.caption": {en:"Andalusia", es:"Andalucía"},
+    "exp.card4.title": {en:"The Complete Week", es:"La Semana Completa"},
+    "exp.card4.desc": {en:"Your chosen sport, woven together with gastronomy, rest and culture into a single, unhurried week.", es:"El deporte que elija, entrelazado con gastronomía, descanso y cultura en una única semana, sin prisa."},
+
+    "sports.eyebrow": {en:"Sports", es:"Deportes"},
+    "sports.heading": {en:"Four disciplines. Nothing else pretended.", es:"Cuatro disciplinas. Nada que no dominemos."},
+    "sports.golf": {en:"Golf", es:"Golf"},
+    "sports.golf.desc": {en:"Championship courses along the Costa de la Luz, with private coaching at every level.", es:"Campos de campeonato en la Costa de la Luz, con entrenamiento privado en cualquier nivel."},
+    "sports.padel": {en:"Padel", es:"Pádel"},
+    "sports.padel.desc": {en:"Europe's fastest-growing racket sport, played on real courts, matched to your level.", es:"El deporte de raqueta que más crece en Europa, en pistas reales, adaptado a su nivel."},
+    "sports.tennis": {en:"Tennis", es:"Tenis"},
+    "sports.tennis.desc": {en:"Classic technique and modern conditioning, on courts built for serious play.", es:"Técnica clásica y preparación física moderna, en pistas pensadas para jugar en serio."},
+    "sports.gym": {en:"Gym &amp; Personal Training", es:"Gimnasio y Entrenamiento Personal"},
+    "sports.gym.desc": {en:"Strength, conditioning and recovery with a dedicated coach — never a hotel gym.", es:"Fuerza, preparación física y recuperación con un entrenador dedicado — nunca el gimnasio del hotel."},
+    "sports.footnote": {en:"Four disciplines. No filler. Everything we do, we do properly.", es:"Cuatro disciplinas. Sin relleno. Todo lo que hacemos, lo hacemos bien."},
+
+    "why.eyebrow": {en:"Why Live Experience", es:"Por Qué Live Experience"},
+    "why.heading": {en:"Discretion, depth and one client at a time.", es:"Discreción, profundidad y un cliente a la vez."},
+    "why.tile1.title": {en:"A dedicated experience designer", es:"Un diseñador de experiencias dedicado"},
+    "why.tile1.body": {en:"One point of contact who understands your brief in full — never a call centre, never a template.", es:"Un único punto de contacto que entiende su encargo por completo — nunca un centro de llamadas, nunca una plantilla."},
+    "why.tile2.title": {en:"Absolute discretion", es:"Discreción absoluta"},
+    "why.tile2.body": {en:"Your plans, your presence and your preferences remain strictly private, before, during and after.", es:"Sus planes, su presencia y sus preferencias permanecen estrictamente privados, antes, durante y después."},
+    "why.tile3.title": {en:"A curated network", es:"Una red seleccionada"},
+    "why.tile3.body": {en:"Coaches, chefs, estates and clubs across the south of Spain, chosen for standard, not visibility.", es:"Entrenadores, chefs, fincas y clubes en todo el sur de España, elegidos por su nivel, no por su visibilidad."},
+    "why.tile4.title": {en:"No fixed packages", es:"Sin paquetes cerrados"},
+    "why.tile4.body": {en:"Every proposal is written from a blank page, for one client, one week, one purpose.", es:"Cada propuesta se escribe desde cero, para un cliente, una semana, un propósito."},
+    "why.tile5.title": {en:"Local expertise, held deeply", es:"Conocimiento local, en profundidad"},
+    "why.tile5.body": {en:"Years of relationships across sport, gastronomy and hospitality — knowledge that cannot be booked online.", es:"Años de relaciones en el deporte, la gastronomía y la hostelería — un conocimiento que no se reserva por internet."},
+    "why.tile6.title": {en:"A limited number of weeks each season", es:"Un número limitado de semanas por temporada"},
+    "why.tile6.body": {en:"We design few experiences at a time, deliberately, so that each receives full attention.", es:"Diseñamos pocas experiencias a la vez, de forma deliberada, para que cada una reciba atención completa."},
+
+    "process.eyebrow": {en:"Process", es:"Proceso"},
+    "process.heading": {en:"What happens after you reach out.", es:"Qué ocurre después de contactarnos."},
+    "process.step1.meta": {en:"Step 01", es:"Paso 01"},
+    "process.step1.title": {en:"Enquiry", es:"Consulta"},
+    "process.step1.body": {en:"You complete a short, private form — the starting point of a conversation, not a booking.", es:"Usted completa un breve formulario privado — el punto de partida de una conversación, no una reserva."},
+    "process.step2.meta": {en:"Step 02", es:"Paso 02"},
+    "process.step2.title": {en:"Discovery", es:"Descubrimiento"},
+    "process.step2.body": {en:"A member of our team reaches out, by call or message, to understand you and your goals in depth.", es:"Un miembro de nuestro equipo se pone en contacto, por llamada o mensaje, para entender en profundidad sus objetivos."},
+    "process.step3.meta": {en:"Step 03 — Typically within 5 business days", es:"Paso 03 — Normalmente en un plazo de 5 días laborables"},
+    "process.step3.title": {en:"Design", es:"Diseño"},
+    "process.step3.body": {en:"We build a complete proposal — sport, stay, table, rhythm — written for you and no one else.", es:"Elaboramos una propuesta completa — deporte, alojamiento, mesa, ritmo — escrita solo para usted."},
+    "process.step4.meta": {en:"Step 04", es:"Paso 04"},
+    "process.step4.title": {en:"Refinement", es:"Ajuste"},
+    "process.step4.body": {en:"You review it. We adjust whatever isn't quite right, until every detail feels considered.", es:"Usted la revisa. Ajustamos lo que no encaje del todo, hasta que cada detalle se sienta cuidado."},
+    "process.step5.meta": {en:"Step 05", es:"Paso 05"},
+    "process.step5.title": {en:"The Experience", es:"La Experiencia"},
+    "process.step5.body": {en:"We handle every detail on the ground, so your only task is to arrive.", es:"Nos ocupamos de cada detalle sobre el terreno, para que su única tarea sea llegar."},
+
+    "form.eyebrow": {en:"Design Your Experience", es:"Diseña tu Experiencia"},
+    "form.heading": {en:"This isn't a booking form.<br>It's the start of a conversation.", es:"Esto no es un formulario de reserva.<br>Es el comienzo de una conversación."},
+    "form.sub": {en:"Tell us who you are, and what a perfect week would feel like. We'll take care of the rest.", es:"Cuéntenos quién es usted y cómo sería una semana perfecta. Nosotros nos ocupamos del resto."},
+
+    "form.progress.step1": {en:"About You", es:"Sobre Usted"},
+    "form.progress.step2": {en:"Your Trip", es:"Su Viaje"},
+    "form.progress.step3": {en:"Sport &amp; Goals", es:"Deporte y Objetivos"},
+    "form.progress.step4": {en:"Stay &amp; Lifestyle", es:"Alojamiento y Estilo"},
+    "form.progress.step5": {en:"Your Vision", es:"Su Visión"},
+
+    "form.step1.title": {en:"About you", es:"Sobre usted"},
+    "form.step1.sub": {en:"So we know who we're designing for.", es:"Para saber para quién estamos diseñando."},
+    "form.label.firstName": {en:"First name", es:"Nombre"},
+    "form.label.lastName": {en:"Last name", es:"Apellidos"},
+    "form.label.country": {en:"Country of residence", es:"País de residencia"},
+    "form.ph.country": {en:"Select country", es:"Seleccione un país"},
+    "form.label.language": {en:"Preferred language", es:"Idioma preferido"},
+    "form.ph.language": {en:"Select language", es:"Seleccione un idioma"},
+    "form.label.email": {en:"Email", es:"Correo electrónico"},
+    "form.label.phone": {en:"Phone (with country code)", es:"Teléfono (con prefijo internacional)"},
+
+    "opt.switzerland": {en:"Switzerland", es:"Suiza"},
+    "opt.sweden": {en:"Sweden", es:"Suecia"},
+    "opt.norway": {en:"Norway", es:"Noruega"},
+    "opt.denmark": {en:"Denmark", es:"Dinamarca"},
+    "opt.germany": {en:"Germany", es:"Alemania"},
+    "opt.uk": {en:"United Kingdom", es:"Reino Unido"},
+    "opt.us": {en:"United States", es:"Estados Unidos"},
+    "opt.other": {en:"Other", es:"Otro"},
+    "opt.langEnglish": {en:"English", es:"Inglés"},
+    "opt.langGerman": {en:"German", es:"Alemán"},
+    "opt.langSwedish": {en:"Swedish", es:"Sueco"},
+    "opt.langNorwegian": {en:"Norwegian", es:"Noruego"},
+    "opt.langDanish": {en:"Danish", es:"Danés"},
+    "opt.langSpanish": {en:"Spanish", es:"Español"},
+
+    "form.step2.title": {en:"Your trip", es:"Su viaje"},
+    "form.step2.sub": {en:"Rough dates are perfectly fine — precision comes later.", es:"Unas fechas aproximadas son perfectamente válidas — la precisión llega después."},
+    "form.label.dates": {en:"Approximate dates", es:"Fechas aproximadas"},
+    "form.datesPlaceholder": {en:"Select your dates", es:"Seleccione sus fechas"},
+    "form.label.arrival": {en:"Arrival", es:"Llegada"},
+    "form.label.departure": {en:"Departure", es:"Salida"},
+    "form.datesFlexible": {en:"My dates are flexible", es:"Mis fechas son flexibles"},
+    "form.datesApply": {en:"Apply", es:"Aplicar"},
+    "form.label.people": {en:"Number of people", es:"Número de personas"},
+    "form.ph.people": {en:"e.g. 2", es:"p. ej., 2"},
+    "form.label.reason": {en:"Reason for travel", es:"Motivo del viaje"},
+    "opt.reasonPersonal": {en:"Personal escape", es:"Escapada personal"},
+    "opt.reasonCouple": {en:"Couple", es:"En pareja"},
+    "opt.reasonFamily": {en:"Family", es:"En familia"},
+    "opt.reasonFriends": {en:"Friends group", es:"Grupo de amigos"},
+    "opt.reasonCorporate": {en:"Corporate / incentive", es:"Corporativo / incentivo"},
+    "form.label.occasion": {en:"Celebrating a special occasion?", es:"¿Celebran alguna ocasión especial?"},
+    "form.ph.occasion": {en:"e.g. 50th birthday, anniversary — or leave blank", es:"p. ej., 50 cumpleaños, aniversario — o déjelo en blanco"},
+
+    "form.step3.title": {en:"Sport &amp; goals", es:"Deporte y objetivos"},
+    "form.step3.sub": {en:"What should the week be built around?", es:"¿Alrededor de qué debería construirse la semana?"},
+    "form.label.sport": {en:"Sport(s) of interest", es:"Deporte(s) de interés"},
+    "form.label.levelPerSport": {en:"Level, per sport", es:"Nivel, por deporte"},
+    "form.ph.level": {en:"Select level", es:"Seleccione un nivel"},
+    "opt.levelBeginner": {en:"Beginner", es:"Principiante"},
+    "opt.levelIntermediate": {en:"Intermediate", es:"Intermedio"},
+    "opt.levelAdvanced": {en:"Advanced", es:"Avanzado"},
+    "opt.levelElite": {en:"Competitive / Elite", es:"Competitivo / Élite"},
+    "form.label.goal": {en:"Goal of the trip", es:"Objetivo del viaje"},
+    "form.ph.goal": {en:"Select goal", es:"Seleccione un objetivo"},
+    "opt.goalPerformance": {en:"Performance &amp; training", es:"Rendimiento y entrenamiento"},
+    "opt.goalRest": {en:"Rest &amp; recovery", es:"Descanso y recuperación"},
+    "opt.goalDiscovery": {en:"Discovery &amp; culture", es:"Descubrimiento y cultura"},
+    "opt.goalCelebration": {en:"Celebration", es:"Celebración"},
+    "opt.goalBalance": {en:"A balance of everything", es:"Un equilibrio de todo"},
+
+    "form.step4.title": {en:"Stay &amp; lifestyle", es:"Alojamiento y estilo de vida"},
+    "form.step4.sub": {en:"The setting matters as much as the schedule.", es:"El entorno importa tanto como el calendario."},
+    "form.label.mealPlan": {en:"Meal plan preference", es:"Preferencia de régimen alimenticio"},
+    "form.ph.mealPlan": {en:"Select meal plan", es:"Seleccione un régimen"},
+    "opt.mealBreakfast": {en:"Breakfast only", es:"Solo desayuno"},
+    "opt.mealHalf": {en:"Half board", es:"Media pensión"},
+    "opt.mealFull": {en:"Full board", es:"Pensión completa"},
+    "opt.mealNone": {en:"No preference", es:"Sin preferencia"},
+    "form.label.diet": {en:"Dietary preferences or restrictions", es:"Preferencias o restricciones alimentarias"},
+    "form.ph.diet": {en:"e.g. vegetarian, gluten-free, none", es:"p. ej., vegetariano, sin gluten, ninguna"},
+    "form.label.activities": {en:"Optional activities you'd enjoy", es:"Actividades opcionales que disfrutaría"},
+    "form.ph.activities": {en:"e.g. wine tasting, cooking class, spa, boat day", es:"p. ej., cata de vinos, clase de cocina, spa, día en barco"},
+    "form.label.transport": {en:"Transport needs", es:"Necesidad de transporte"},
+    "opt.transferAll": {en:"Handle everything for me", es:"Encárguense de todo"},
+    "opt.transferOnly": {en:"Airport transfers only", es:"Solo traslados de aeropuerto"},
+    "opt.transferSelf": {en:"I'll manage my own", es:"Yo me organizo el transporte"},
+    "opt.transferUnsure": {en:"Not sure", es:"No estoy seguro"},
+
+    "form.step5.title": {en:"Your vision", es:"Su visión"},
+    "form.step5.sub": {en:"The last few details, and the most important one.", es:"Los últimos detalles, y el más importante."},
+    "form.label.heard": {en:"How did you hear about us?", es:"¿Cómo nos conoció?"},
+    "form.ph.heard": {en:"Select an option", es:"Seleccione una opción"},
+    "opt.heardRecommendation": {en:"Personal recommendation", es:"Recomendación personal"},
+    "opt.heardInstagram": {en:"Instagram", es:"Instagram"},
+    "opt.heardGoogle": {en:"Google search", es:"Búsqueda en Google"},
+    "opt.heardConcierge": {en:"Concierge / travel advisor", es:"Asesor de viajes / concierge"},
+    "form.label.budget": {en:"Approximate budget per person", es:"Presupuesto aproximado por persona"},
+    "form.ph.budget": {en:"Select a range", es:"Seleccione un rango"},
+    "form.label.vision": {en:"What would the perfect trip look like for you?", es:"¿Cómo sería el viaje perfecto para usted?"},
+    "form.ph.vision": {en:"Write as much or as little as you like — this is what we design from.", es:"Escriba tanto como desee — esto es lo que usamos para diseñar."},
+
+    "form.nav.back": {en:"Back", es:"Atrás"},
+    "form.nav.continue": {en:"Continue", es:"Continuar"},
+    "form.nav.submit": {en:"Send Request", es:"Enviar Solicitud"},
+    "form.consentHtml": {en:'I agree to be contacted about my enquiry, in line with the <a href="privacy.html" target="_blank">Privacy Policy</a>.', es:'Acepto ser contactado en relación con mi consulta, conforme a la <a href="privacy.html" target="_blank">Política de Privacidad</a>.'},
+    "form.directContactHtml": {en:'Prefer to speak directly? <a href="https://wa.me/34000000000" target="_blank">WhatsApp us</a> or write to <a href="mailto:hello@liveexperience.example">hello@liveexperience.example</a>.', es:'¿Prefiere hablar directamente? <a href="https://wa.me/34000000000" target="_blank">Escríbanos por WhatsApp</a> o al correo <a href="mailto:hello@liveexperience.example">hello@liveexperience.example</a>.'},
+    "form.thankyou.title": {en:"Request received.", es:"Solicitud recibida."},
+    "form.thankyou.body": {en:"Thank you — a member of our team will be in touch within one business day to begin designing your experience. Until then, thank you for trusting us with the beginning of it.", es:"Gracias — un miembro de nuestro equipo se pondrá en contacto en el plazo de un día laborable para comenzar a diseñar su experiencia. Mientras tanto, gracias por confiarnos el comienzo de todo esto."},
+
+    "faq.eyebrow": {en:"Questions", es:"Preguntas"},
+    "faq.heading": {en:"Before you write to us.", es:"Antes de escribirnos."},
+    "faq.q1.title": {en:"How far in advance should I enquire?", es:"¿Con cuánta antelación debo contactar?"},
+    "faq.q1.body": {en:"Most experiences are designed six to twelve weeks ahead, though we have arranged trips with far less notice. The earlier you write to us, the more freedom we have in the design.", es:"La mayoría de las experiencias se diseñan entre seis y doce semanas antes, aunque hemos organizado viajes con mucho menos margen. Cuanto antes escriba, más libertad tenemos en el diseño."},
+    "faq.q2.title": {en:"Is this only for elite athletes?", es:"¿Es esto solo para deportistas de élite?"},
+    "faq.q2.body": {en:"No. We design for every level, from a first padel lesson to competitive training blocks. What matters is intention, not ability.", es:"No. Diseñamos para todos los niveles, desde una primera clase de pádel hasta bloques de entrenamiento competitivo. Lo que importa es la intención, no el nivel."},
+    "faq.q3.title": {en:"Can you host groups, families or corporate teams?", es:"¿Pueden organizar viajes para grupos, familias o equipos corporativos?"},
+    "faq.q3.body": {en:"Yes. Many of our experiences are designed for couples, families and small groups, and we regularly design private incentive trips for teams.", es:"Sí. Muchas de nuestras experiencias se diseñan para parejas, familias y grupos reducidos, y organizamos con regularidad viajes de incentivo privados para equipos."},
+    "faq.q4.title": {en:"What exactly is included in the proposal?", es:"¿Qué incluye exactamente la propuesta?"},
+    "faq.q4.body": {en:"A complete, day-by-day plan covering your stay, your sport, your table and your free time — along with full pricing, before anything is confirmed.", es:"Un plan completo, día a día, que cubre el alojamiento, el deporte, la mesa y el tiempo libre — junto con el precio completo, antes de confirmar nada."},
+    "faq.q5.title": {en:"Is everything truly private and personalised?", es:"¿Es todo realmente privado y personalizado?"},
+    "faq.q5.body": {en:"Yes. We do not run group departures or shared itineraries. Every proposal is built once, for one client, and is never reused.", es:"Sí. No organizamos salidas grupales ni itinerarios compartidos. Cada propuesta se crea una sola vez, para un cliente, y nunca se reutiliza."},
+    "faq.q6.title": {en:"What if I don't know exactly what I want yet?", es:"¿Y si aún no sé exactamente lo que quiero?"},
+    "faq.q6.body": {en:"That's the most common starting point. Share what you can, and our team will ask the right questions during the discovery call.", es:"Es el punto de partida más habitual. Comparta lo que pueda, y nuestro equipo hará las preguntas adecuadas durante la llamada de descubrimiento."},
+    "faq.q7.title": {en:"Which regions do you cover?", es:"¿Qué zonas cubren?"},
+    "faq.q7.body": {en:"Primarily the south of Spain — Andalusia's coastline, countryside and mountains — with select experiences extending further on request.", es:"Principalmente el sur de España — la costa, el interior y la sierra de Andalucía — con experiencias seleccionadas que se extienden más allá si se solicita."},
+    "faq.q8.title": {en:"Do you require a deposit to begin designing?", es:"¿Es necesario un depósito para empezar a diseñar?"},
+    "faq.q8.body": {en:"No. The design process is complimentary and without obligation. You only commit once the proposal reflects exactly what you had in mind.", es:"No. El proceso de diseño es gratuito y sin compromiso. Solo se confirma una vez que la propuesta refleja exactamente lo que usted tenía en mente."},
+
+    "footer.tagline": {en:"A private design studio for bespoke sporting and lifestyle experiences across the south of Spain.", es:"Un estudio privado de diseño de experiencias deportivas y de estilo de vida a medida en el sur de España."},
+    "footer.explore": {en:"Explore", es:"Explorar"},
+    "footer.enquire": {en:"Enquire", es:"Contacto"},
+    "footer.studio": {en:"Studio", es:"Estudio"},
+    "footer.privacy": {en:"Privacy Policy", es:"Política de Privacidad"},
+    "footer.terms": {en:"Terms of Service", es:"Términos de Servicio"},
+    "footer.instagram": {en:"Instagram", es:"Instagram"},
+    "footer.copyright": {en:"© 2026 Live Experience. All rights reserved.", es:"© 2026 Live Experience. Todos los derechos reservados."},
+    "footer.location": {en:"Andalusia, Spain", es:"Andalucía, España"}
+  };
+
+  function t(lang, key){
+    const entry = translations[key];
+    if(!entry) return key;
+    return entry[lang] || entry.en || key;
+  }
+
+  let currentLang = 'en';
+  function applyLang(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = t(lang, key);
+      if(el.hasAttribute('data-i18n-html')){ el.innerHTML = val; }
+      else { el.textContent = val; }
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      el.setAttribute('placeholder', t(lang, el.getAttribute('data-i18n-ph')));
+    });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    try{ localStorage.setItem('le_lang', lang); }catch(e){}
+  }
+  window.__applyCurrentLang = () => applyLang(currentLang);
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  let initialLang = 'en';
+  try{ initialLang = localStorage.getItem('le_lang') || 'en'; }catch(e){}
+  applyLang(initialLang);
+
+})();
+</script>
+</body>
+</html>
